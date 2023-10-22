@@ -16,6 +16,7 @@ export class ProductComponent implements
 {
 
   public isProductVisible: boolean = true;
+  public currentPrice: number = 10;
 
   constructor() {
     console.log('constructor');
@@ -25,7 +26,7 @@ export class ProductComponent implements
     console.log('ngOnInit');
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    console.log({changes});
     console.log('ngOnChanges');
   }
   ngDoCheck(): void {
@@ -47,4 +48,7 @@ export class ProductComponent implements
     console.log('ngOnDestroy');
   }
 
+  increasePrice(): number {
+    return this.currentPrice++;
+  }
 }
